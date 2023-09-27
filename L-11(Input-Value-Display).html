@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input value Display</title>
+</head>
+<body>
+      <p>Topices we study:-
+         1.Make input-box 
+         2.Get value on keyup(change) 
+         3.Display value on screen
+         4.Get value on button click 
+         5.Interview-Question
+      </p>
+
+      <form action="">
+        <input type="text" placeholder="Enter Something" id="input" onblur="f()">
+        <br>
+        <br>
+       <button onclick="getVal()">Click-Me</button>
+      </form>
+
+
+      <script>
+        function f(){
+            var val = document.querySelector('input').value
+            document.write(`<ul>
+                <li>${val}</li>
+                </ul>`)
+        }
+
+        // function getVal(){
+        //     var a = prompt('Enter something');
+        //     console.log(a);
+        // }
+      </script>
+</body>
+</html>
