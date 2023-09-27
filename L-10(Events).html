@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    
+    <p>Events are the main feature of javascript that give permission when user click,hover,mouseup,mousedown then something will happen according the function code.</p>
+
+    <form action="">
+        <input type="text" name="" id="">
+        <br>
+        <br>
+        <button onclick="Test()">Click-Me</button>
+    </form>
+
+
+
+    <script>
+        function Test(){
+            var age = prompt('Please Enter your age');
+
+            switch (age){
+                case 16:
+                    alert('You are not eligible for voting');
+                    break;
+
+                case 17:
+                    alert('Please try next year');
+                    break;
+
+                case 18:
+                    alert('You are eligible for voting');
+                    break;
+
+                default:
+                    alert('Wrong input');
+
+
+            }
+           
+        }
+    </script>
+</body>
+</html>

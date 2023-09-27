@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic-Form</title>
+</head>
+<body>
+    <p>Topices we study:- 
+        <ol>
+            <li>Import Form Module</li>
+            <li>Make Simple Form</li>
+            <li>Get Form value</li>
+            <li>Print value</li>
+            <li>Interview-Questions</li>
+        </ol>
+    </p>
+
+    <p>If We want to use Form component in app component then must import that component in app.module.ts then your Form work,that means your main and default component is app component that is created at the time of setup of angular component.So all tags are imported in app.module.ts file,if you have your own component then you import in your component.module.ts file</p>
+
+    Interview-Questions:- 
+     1.How to display a form data in your screen.
+       Steps:- 
+       a.First create a form in app.component.html,in form tag create id,one click event and click event call function.
+       b.Create a function in app.component.ts file,in function pass parameter that name is data then that data equal to your declare property varibale like:- this.userDetails=data
+       c.Then declare userDetails property variable in Export class and noted down one thing when you create input field then must give name because that name is use at the time of display data like:- {{userData.name}} {{userData.email}} {{userData.password}}
+       d.if you create form then must be import in your module.ts file then it working.
+       e.create a list for display form value like:- li {userData.name}
+</body>
+</html>

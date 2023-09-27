@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle Element in Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    
+    <ol>
+        <li>Make html Element and Button</li>
+        <li>Define and apply property</li>
+        <li>Update Property For Toogle</li>
+        <li>Interview-Question</li>
+    </ol>
+
+    <p>Toogle help to show hide the element with the help of Event.</p>
+    <p>Definition: A toggle switch is a digital on/off switch. Toggle switches are best used for changing the state of system functionalities and preferences. Toggles may replace two radio buttons or a single checkbox to allow users to choose between two opposing states.29-Jul-2018</p>
+
+    <p>How to manage toogle?
+        simply we create a function and apply that function in your tag with click event and control it with if else block.
+    </p>
+
+
+    <p>This is a paragraph.</p>
+
+    <button>Toggle between hide() and show()</button>
+    
+
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("p").toggle();
+          });
+        });
+     </script>
+</body>
+</html>
