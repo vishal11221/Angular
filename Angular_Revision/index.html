@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Revision</title>
+</head>
+<body>
+    
+    <ol>
+        <li><strong>What is Angular and Why we use it ? </strong><br>
+            Angular is open source javascript framework written in Typescript language.Google maintains it and the primary purpose to create single page application.Angular use NPM(Node Package Manager) and CLI(Command Line Interface) to develop Angular application directly from command shell.</li>
+        <li><strong>Difference between Angular and Angularjs? </strong> <br>
+            Angular is latest version and Angularjs is the older version,the new version coming as Angular2,3,4,5,6,7,8,9,10,11,12.</li>
+        <li><strong>What is the latest version of Angular ?  </strong><br>
+            Angular16 is the latest version.</li>
+        <li><strong>What is the major Difference between Framework and Library ? </strong><br>
+            Framework is the collection of Libraries and configuration files.And Library is a set of codes,method that is reused by some framework.</li>
+        <li><strong>How to SetUp your Angular Projects </strong>
+            <ol>
+                <li>First,You Install Nodejs,After that check the version of Nodejs</li>
+                <li>Second,You check the version of NPM because when we install Nodejs NPM also installed.</li>
+                <li>Third You create your folder in Desktop and Open it in VS-Code then open the terminal in Vs code and check  nodejs and npm show or not.</li>
+                <li>After that check Angular CLI is globally installed or not in your system.If it is not installed then install Angular CLI with npm install -g @angular/cli , then angular cli installed successfully in your system,Now you are able to setup your angular project.</li>
+                <li>Now you run the command to create new angular project in your current directory with ng new projectname.</li>
+                <li>Now your angular project created successfully,You open your project with ng serve --open that command open your project in new window.</li>
+            </ol>
+        </li>
+        <li><strong>Difference between Interpolation and Property Binding ? </strong><br>
+            Interpolation is the feature of Angular that help to show the piece of data in Html content,like we have title of our project and we want to show the title within h2 tag,with the help of Interpolation it is possible simply use double curly braces and defined title on it. <br>
+            Property binding is also a feature of Angular that help to show object value in square braces.</li>
+        <li> <strong>Difference between Static Routing and Dynamic Routing ? </strong><br>
+            Static routing is a process that help to go one view to another view as user perform taks in web-app.For example:-We create three components like,home,login,singup components then we set all three routing in app-routing-module.ts,in this file routes variable is there to set the path of component-wise.After that in html file create html link with a routerLink to set the compents link. <br>
+            Dynamic routing is useful when we fetch the list data information from database.</li>
+        <li><strong>How to create Form & Submit a Form data ? </strong><br>
+            We create a form in angular with form tag and define submit function with ngsubmit to submit form data value.When we use form then we must import formsmodule in app.module.ts files and formgroup in form tag of html content.</li>
+        <li><strong>How to diplay a list of data with for loop. ? </strong><br>
+            Declare user object data in app.component.ts file then display that data in html file with ngFor directives.</li>
+        <li><strong>What is Lazy loading and why we use it? </strong><br>
+            Lazy loading is a technique that allows you to load modules and components only when they are needed,reducing the initial load time of an application. For example we have thousand of component in our project and thousand of links to render that project,when user visit in our website then all component loaded then our website get slow to resolve that problem we use lazy loading,lazy loading only load that page that we need other's are not loaded,like user click on service then only service page load not all pages load then our website rendering fast.</li>
+        <li><strong>What is Data binding and why we use it ? </strong><br>
+            Data binding is the way to show component data into Html view format. 
+             <ol>
+                <li>Property Binding</li>
+                <li>Interpolation</li>
+             </ol>
+        </li>
+        <li><strong>What is Angular Pipes and Why we use it ? </strong><br>
+            Pipes are simple operator to use in template expression to accept an input value and return a transformmed value.With the help of Pipes we transformmed the data as:- uppercase,change the date fromat in dd-mm-yyyy.</li>
+        <li><strong>Directives are classes that add additional behaviour to elements in your Angular application. Angular provide in-built directives like:-ngIf,ngFor,ngSwitch. </strong><br>
+           With the help of directives,we set our own custom property to change styling and that directives use within that tag elements.For example:-we create one directive that name is cstColor then we set that directive to in red color.So where we apply that directive like for text that color is going to red.</li>
+        <li><strong>What are Angular Template ? </strong> <br>
+            Template are HTML Files and Ts are class file.Template are used to show class logic in Html view.</li>
+        <li><strong>What are Services and Why we use it ? </strong> <br>
+            Services is a class or piece of code that we reuse in more than one component to show or display data.For example:-We have student data that already show in Header component,So we also show the data in Footer component.</li>
+        <li><strong>What is Dependency Injection ? </strong> <br>
+            The word Dependency that means one component depends on other component to perform/Inject some action.Like we have two component,card.component.ts and message.service.ts so card component depends on message component to call method of message component. </li>
+
+       <li> <strong>What is Reactive Form in Angular ? </strong> <br>
+            With the help of Reactive Form we validate and update our forms data.You can add or remove controls at run time.</li>
+    </ol>
+</body>
+</html>
