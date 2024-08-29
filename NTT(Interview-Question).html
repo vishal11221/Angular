@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview-Questions</title>
+</head>
+<body>
+   <!-- 1 -->
+        Introduce Yourself.
+          MySelf vishal raj,i completed my post graduation(MCA) from Graphic Era University Dehradun.Currently i am working in REConnect Energy Solution limited as a software Enginner.My Role and responsibility to design and develop web pages using HTML, CSS, BOOTSTRAP, JAVASCRIPT,Angular,Git and bitbucket i used with team.
+
+    <!-- 2 -->
+          What is Angular ?
+            Angular is a framework of javascript that has so many inbuilt keyword that help to built attractive Webpages.
+
+     <!-- 3 -->
+          Currently which version you used of Angular? 
+          Angular16
+
+    <!-- 4 -->
+          What are the new things in new Version of Angular?
+          pipes,Directives
+
+    <!-- 5 -->
+            What is Interpolation and Property-Binding ?
+            Interpolation is used to bind a property from the component to the view, displaying it as text.
+          <!-- Example of Interpolation -->
+          // component.ts
+          export class AppComponent {
+            title = 'Hello, World!';
+          }
+          
+          // component.html
+              <h1>{{ title }}</h1>
+
+          <!-- Example of Property-Binding -->
+            Property binding is used to bind a property from the component to a DOM property of an element.
+          // component.ts
+          export class AppComponent {
+            title = "Hello vishal"
+          }
+          
+          // component.html
+              <h1 [innerHtml]="title"></h1>
+
+   <!-- 6 -->
+          What is two way binding ?
+          When we work on component to view and view to component at a time.
+
+      <!-- Example of Two way binding -->
+            <!-- app.component.ts -->
+            export class AppComponent {
+              inputText: string = '';
+            }
+            
+            <!-- app.component.html -->
+              <input [(ngModel)]="inputText" placeholder="Enter text here" />
+              <p>You Typed:{{ inputText }}</p>
+
+   <!-- 7 -->
+          what is dynamic binding ?
+          Dynamic binding refers to the binding between the component and the view.
+
+   <!-- Example:(1)--->
+       <!-- app.component.ts -->
+        export class AppComponent {
+          dynamicColor = "blue";
+        }
+
+        <!-- app.component.html -->
+          <h1 [style.color]="dynamicColor">Hello World</h1>
+
+        <!-- Example:(2)---->
+        <div class="container2">
+          <input [(ngModel)]="inputText" placeholder="Type something.." />
+        </div>
+        
+        <div *ngIf="inputText">
+          <p [ngStyle]="{ color: 'blue' }">{{ inputText }}</p>
+        </div>
+
+        <!-- app.component.ts -->
+         export component AppComponent{
+          inputText:string = '';
+         }
+
+    <!-- 8. -->
+     create one input field and one button, when you click on button text should display at bottom.
+       <!-- app.component.ts -->
+              import { Component, VERSION } from '@angular/core';
+
+              @Component({
+                selector: 'my-app',
+                templateUrl: './app.component.html',
+                styleUrls: ['./app.component.css'],
+              })
+              export class AppComponent {
+                name = 'Angular ' + VERSION.major;
+                inputText: string = '';
+                displayedText: string | null = null;
+              
+                displayText() {
+                  this.displayedText = this.inputText;
+                  this.inputText = '';
+                }
+              }
+     
+       <!-- app.component.html -->
+            <div>
+              <input [(ngModel)]="inputText" placeholder="Enter text here" />
+              <button (click)="displayText()">Display Text</button>
+            </div>
+            
+            <div class="bottomTxt" *ngIf="displayedText">
+              <p>{{ displayedText }}</p>
+            </div>
+
+        <!-- app.component.css -->
+              .bottomTxt {
+                bottom: 0;
+                left: 0;
+                position: fixed;
+            
+              }
+        
+     <!-- 9. -->
+      create Components folder in src/app folder.Then create 4 components in it.
+        <!-- first generate component  -->
+        ng generate component home
+        ng generate component about
+        ng generate component contact
+        ng generate component user
+
+        <!-- app.module.ts -->
+          import { NgModule } from '@angular/core';
+          import { RouterModule, Routes } from '@angular/router';
+          import { HomeComponent } from './Components/home/home.component';
+          import { AboutComponent } from './Components/about/about.component';
+          import { ContactComponent } from './Components/contact/contact.component';
+          import { UserComponent } from './Components/user/user.component';
+
+          const routes: Routes = [
+            { path: '', component: HomeComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'contact', component: ContactComponent },
+            { path: 'user', component: UserComponent },
+          ];
+
+          @NgModule({
+            imports: [RouterModule.forRoot(routes)],
+            exports: [RouterModule],
+            declarations: [HomeComponent, AboutComponent, ContactComponent, UserComponent],
+          })
+          export class AppRoutingModule { }
+
+          <!-- Set up navigation link in app.component.html -->
+                    <nav>
+                        <ul>
+                          <li><a routerLink="/component-one">Component One</a></li>
+                          <li><a routerLink="/component-two">Component Two</a></li>
+                          <li><a routerLink="/component-three">Component Three</a></li>
+                          <li><a routerLink="/component-four">Component Four</a></li>
+                        </ul>
+                    </nav>
+                  <router-outlet></router-outlet>
+
+        <!-- 10 -->
+          How to give margin-top with the help of bootstrap?
+            mt-1 
+            mt-2 
+            mt-3
+            mt-4
+            mt-5
+
+        <!-- 11 -->
+          What is d-flex in bootstrap?
+            d-flex display data in horizental way.
+
+        <!-- Example of d-flex -->
+              <div class="d-flex">
+                <div class="p-2">Item 1</div>
+                <div class="p-2">Item 2</div>
+                <div class="p-2">Item 3</div>
+              </div>
+
+        <!-- 12 -->
+         What is Lazy-Loading in Angular?
+           Lazy-Loading is the feature of Angular that help to load only required component and module when they're needed to load.
+</body>
+</html>
