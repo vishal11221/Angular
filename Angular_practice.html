@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Practice</title>
+</head>
+<body>
+    <ol>
+        <li>Introduce yourselef:- My self vishal raj, i done my graduation(MCA) from Graphic Era University Dehradun. Currently i am working in REConnect Energy Solution limited as a software Enginner.My Role and responsibility to design and develop web pages using HTML, CSS, BOOTSTRAP, JAVASCRIPT,Angular,Git and bitbucket i used with team.</li>
+
+        <li>About Angular:-Angular is a javascript framework that is basically used to create single page application.It maintain by Google.</li>
+
+        <li>What is framework:- A framework is a set of pre-written code that provides a basic structure and functionality for a software project.</li>
+        
+        <li>Feature of Angular:- 
+            <ol>
+                <li>Directives</li>
+                <li>Pipes</li>
+                <li>Routing</li>
+                <li>Data Binding</li>
+                <li>Dependency Injection</li>
+                <li>Services</li>
+                <li>Note:-In new version app.module.ts remove app.routing.ts added,so all component file used only their on own ts no need module.ts and routing set in app.routing.ts</li>
+            </ol>
+        </li>
+        <li>Latest Version of Angular(18.2.10)</li>
+        <li>What are the new things that we use in Angular new version.(standalone,strict mode,pipes,Directives)</li>
+        <li>Components & it's command</li>
+        <li>Interpolation & Property-Binding</li>
+        <li>Two way data binding/Dynamic binding</li>
+
+        <li>Directives & There types
+            <ol>
+                <li>In Angular, Directives are special markers on a DOM element (such as an attribute, element, or class) that tell Angular to perform specific actions or apply specific behavior to that element. Directives play a vital role in Angular, helping you to extend HTML capabilities and modify DOM behavior dynamically.</li>
+                <li>There are three main types of directives in Angular:
+                    <ol>
+                        <li>Component Directives (a special type of directive):-Components are essentially directives with their own templates. Every Angular component is a directive with a template.selector: The app-example selector can be used in HTML like <app-example></app-example> to invoke this component.</li>
+
+                        <li>Structural Directives:-Structural directives alter the layout of the DOM by adding, removing, or manipulating elements. They change the structure of the view. These directives use the * symbol when applied in templates.
+                            <ol>
+                                <li>*ngIf: Conditionally includes/excludes elements.</li>
+                                <li>*ngFor: Repeats an element for each item in a list.</li>
+                                <li>*ngSwitch: A set of directives to switch between different templates.</li>
+                            </ol>
+                        </li>
+                        <li>Attribute Directives:-Attribute directives change the appearance or behavior of an element. Unlike structural directives, they do not modify the DOM structure but can manipulate DOM attributes.
+                            <ol>
+                                <li>ngClass: Adds/removes a set of CSS classes.</li>
+                                <li>ngStyle: Adds/removes inline styles.</li>
+                                <li>Example of ngClass:- <p [ngClass]="{'active': isActive, 'inactive': !isActive}">This is a paragraph.</p>
+                                </li>
+                                <li>Example of ngStyle:- <p [ngStyle]="{'color': isActive ? 'green' : 'red'}">This text changes color based on isActive.</p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Forms(Template driven form,Reactive form)</li>
+        <li>Authentication</li>
+        <li>Routing & Dynamic Routing</li>
+        <li>Pipes</li>
+        <li>Event Binding</li>
+        <li>Modules & it's command(Module contains components,service,pipes,directives and all.)
+            <ol>
+                <li>Default Module is app.module.ts that contains all components, when we create any new component then we add in app.module.ts</li>
+                <li>To create a new module using this command ng g m modulename</li>
+                <li>If we create a new component inside module then we use this command ng g c modulename/componentname</li>
+                <li>If you create user-auth module and inside you create login component then how you use publicaly this component then you use this command <app-login></app-login> and you must import user-auth module in app.module.ts and also declare and export in user-auth.module.ts then only it will work.</li>
+            </ol>
+            
+            <ol>
+                <h3>How to set routing using module components(version 14 below)</h3>
+                <li>ng generate module admin --routing</li>
+                <li>ng generate component admin/login</li>
+                <li>ng generate component admin/profile</li>
+                <li>ng generate component admin/data</li>
+                <li>Define Routes in admin-routing.module.ts:- 
+                  import { NgModule } from '@angular/core';
+                  import { RouterModule, Routes } from '@angular/router';
+                  import { LoginComponent } from './login/login.component';
+                  import { ProfileComponent } from './profile/profile.component';
+                  import { DataComponent } from './data/data.component';
+                  
+                  const routes: Routes = [
+                    { path: 'login', component: LoginComponent },
+                    { path: 'profile', component: ProfileComponent },
+                    { path: 'data', component: DataComponent },
+                  ];
+                  
+                  @NgModule({
+                    imports: [RouterModule.forChild(routes)],
+                    exports: [RouterModule],
+                  })
+                  export class AdminRoutingModule {}
+                  
+                </li>
+                <li>Define loadChildren in app-routing.module.ts :- 
+                  import { NgModule } from '@angular/core';
+                  import { RouterModule, Routes } from '@angular/router';
+                  
+                  const routes: Routes = [
+                    {
+                      path: 'admin',
+                      loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+                    },
+                  ];
+                  
+                  @NgModule({
+                    imports: [RouterModule.forRoot(routes)],
+                    exports: [RouterModule],
+                  })
+                  export class AppRoutingModule {}
+                  
+                </li>
+                <li>Must import AdminModule in app.module.ts:- import { AdminModule } from './admin/admin.module';</li>
+                <li>Set routing in app.component.html:-
+                  <div class="container">
+                    <nav>
+                      <ul>
+                        <li><a routerLink="/admin/login">Login</a></li>
+                        <li><a routerLink="/admin/profile">Profile</a></li>
+                        <li><a routerLink="/admin/data">Data</a></li>
+                      </ul>
+                    </nav>
+                    <router-outlet></router-outlet>
+                  </div>
+                </li>
+            </ol>
+        </li>
+        <li>Services:- Services is a class or piece of code that we reuse in more than one component to show data.Like we show the services data in header and footer also. For example:-We have student data that alrady show in Header component, so user also want to show user data in Footer component, <ol>
+            <li>Create UserdataService.ts</li>
+            <li>Inside userdata.service.ts, define a list of users and a method to retrieve it:- import { Injectable } from '@angular/core';
+
+                @Injectable({
+                  providedIn: 'root'
+                })
+                export class UserdataService {
+                  private users = [
+                    { name: 'Alice', email: 'alice@example.com' },
+                    { name: 'Bob', email: 'bob@example.com' },
+                    { name: 'Charlie', email: 'charlie@example.com' }
+                  ];
+                
+                  constructor() { }
+                
+                  getUsers() {
+                    return this.users;
+                  }
+                }
+                </li>
+                <li> Use UserdataService in AppComponent, import { Component, OnInit } from '@angular/core';
+                    import { UserdataService } from './userdata.service';
+                    
+                    @Component({
+                      selector: 'app-root',
+                      templateUrl: './app.component.html',
+                      styleUrls: ['./app.component.css']
+                    })
+                    export class AppComponent implements OnInit {
+                      users = [];
+                    
+                      constructor(private userdataService: UserdataService) {}
+                    
+                      ngOnInit() {
+                        this.users = this.userdataService.getUsers();
+                      }
+                    }
+                    </li>
+                    <li>Add UserdataService to providers in app.module.ts</li>
+                    <li>Display User List in app.component.html,  Use *ngFor to iterate over the users and display their names and emails. You can add this at the top of the file or wherever you want the list to appear.     <h2>User List</h2>
+                        <ul>
+                          <li *ngFor="let user of users">
+                            <strong>{{ user.name }}</strong> - {{ user.email }}
+                          </li>
+                        </ul>
+                        </li>
+                        <li>Add a Footer in app.component.html, Add a footer at the bottom of app.component.html. This will stay constant across your app.<!-- User List (from above) -->
+                            <h2>User List</h2>
+                            <ul>
+                              <li *ngFor="let user of users">
+                                <strong>{{ user.name }}</strong> - {{ user.email }}
+                              </li>
+                            </ul>
+                            
+                            <!-- Footer -->
+                            <footer>
+                              <p>&copy; 2024 Your Company. All rights reserved.</p>
+                            </footer>
+                            </li>
+                            <li><h2>User List</h2>
+                                <ul>
+                                  <li *ngFor="let user of users">
+                                    <strong>{{ user.name }}</strong> - {{ user.email }}
+                                  </li>
+                                </ul>
+                                
+                                <!-- Footer -->
+                                <footer>
+                                  <p>&copy; 2024 Your Company. All rights reserved.</p>
+                                </footer>
+                                </li>
+                                <li>Note:- Don't forgot to integrate CommonModule in footer.component.ts</li>
+        </ol> </li>
+
+        <li>Dependency Injection:- Dependency Injection is a mechanism to inject other depencies into our component.For example:- we have one service that we use in more than one component. In prevoius example we create userdataService that we use in footer component as well as app component also to show the userlist. That means footer and app component both depend on userdataService to show userlist.</li>
+
+        <li>Lazy loading:- It is a mechanisms that help to fast your website. It only load that component that need to load other component it avoid. For example we want only user-course page no need other page then it load only course page and avoid other page.</li>
+
+        <li>API Integration:- API is a set of protocols that enable two software components to communicate with each other. For example, the weather bureau's software system contains daily weather data. The weather app on your phone “talks” to this system via APIs and shows you daily weather updates on your phone.  <ol>
+          <li>Import HttpClientModule from '@angular/common/http'; in app.module.ts</li>
+          <li>We need constructor(private http:HttpClient)</li>
+          <li>Then we need method to fetch the API data and implements OnInit then create ngOnInit() inside ngOnInit call the method that you declare.</li>
+          <li>Then inside method call http.get().subscribe((data)=> {console.log(data)
+              this.res=data;  
+          })</li>
+          <li>Define res property variable to store the data.</li>
+          <li>Then you show the <p>{{res.key1}} {{res.key2}}</p> in app.component.html</li>
+        </ol></li>
+
+
+        <li>Observable</li>
+        <li>HTTP Client and it's Advantage</li>
+        <li>RXjs</li>
+        <li>Error handling</li>
+        <li>Enviornment setup</li>
+        <li>Bootstraping</li>
+        <li>Models</li>
+        <li>Interceptor</li>
+        <li>Local storage</li>
+        <li>Session storage</li>
+        <li>Cookies</li>
+        <li>Cache Memory</li>
+    </ol>
+</body>
+</html>

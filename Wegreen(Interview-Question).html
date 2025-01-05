@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Green Interview Question</title>
+</head>
+<body>
+    
+    <ol>
+        <li>Introduce yourself</li>
+        <li>In Angular,If we have no relationship between component then how we set relationship between component:- Using a Shared Service with Observables (Recommended)
+            Create a shared service to act as a bridge between the components.
+            Use Subject or BehaviorSubject to create observables that allow components to subscribe to and send data to each other.</li>
+
+        <li>Why we use http in Angular:- In Angular, we use the HttpClient module (which is part of the @angular/common/http package) to interact with external APIs or services. This enables our application to communicate with remote servers to send and receive data.</li>
+
+        <li>What is RouterGuard:- RouterGuard is a service that allows you to control access to specific routes in your Angular application.</li>
+
+        <li>What is HTTP Client:- HTTP Client is a module in Angular that allows you to make HTTP requests to a server.</li>
+
+        <li>How to change paragraph color based on button click:- Use ngStyle property to change the color of the paragraph when the button is clicked. <ol>
+            <li>
+                 <!-- app.component.html -->
+                <p [ngStyle]="{'color': isActive ? 'green' : 'red'}">This text changes color based on isActive.</p>
+                <button (click)="isActive = !isActive">{{isActive ? 'red' : 'green'}}</button>
+
+                app.component.ts
+                export class AppComponent {
+                  isActive = true;
+                }
+            </li>
+        </ol></li>
+        <li>How to set routes:- <ol>
+            <li>Create component folder in src/app then create 4 components in it.</li>
+            <li>Set route in app.module.ts</li>
+            <li>Declare it in app.component.html</li>
+        </ol></li>
+        <li>What is Services in Angular:- Services is a class or piece of code that we reuse in more than one component to show data.</li>
+        <li>What is subject in Angular:- Subject is an Observable that allows you to share data between components.</li>
+    </ol>
+</body>
+</html>
